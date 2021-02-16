@@ -78,6 +78,18 @@ react-native run-ios
 ```
 
 NOTE : Il se peut qu'il faille mettre à jour le fichier pod
+
+Commenter le code dans le fichier ***podfile***.
+
+```java
+# Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable these next few lines.
+  # use_flipper!
+  # post_install do |installer|
+  #   flipper_post_install(installer)
+  # end
+```
+
 ```zsh
 npx pod-install
 
