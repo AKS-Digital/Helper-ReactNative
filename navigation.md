@@ -81,7 +81,7 @@ export * from './screens';
 Créer le fichier ***src/navigation/components/AuthStack.tsx*** et copier :
 
 ```ts
-import * as React from 'react';
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SignInScreen, SignUpScreen } from '../../containers';
 import { SCREENS } from '../screens';
