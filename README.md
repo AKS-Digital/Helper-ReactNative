@@ -37,6 +37,10 @@ brew install watchman
 
 La commande suivante nous permettre de compiler des applications ***iOS*** :
 
+Ouvrir les préférences de XCode et sélectionner dans le champ ***Command line tool*** une version supérieur à 9.4
+
+![image](https://reactnative.dev/assets/images/GettingStartedXcodeCommandLineTools-8259be8d3ab8575bec2b71988163c850.png)
+
 ```zsh
 sudo gem install cocoapods
 ```
