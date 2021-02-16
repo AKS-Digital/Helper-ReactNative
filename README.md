@@ -51,12 +51,6 @@ La commande suivante va nous permettre de compiler des applications ***Android**
 brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
 ```
 
-La commande suivante va nous permettre de créer une application react native (Il est préférable d'installer via npx et non en global)
-
-```zsh
-npx react-native <command>
-```
-
 Les commandes suivantes vont nous permettre d'installer Expo :
 
 ```zsh
@@ -64,6 +58,14 @@ npm install -g expo-cli
 ```
 
 ## Initialisation d'un projet React Native Typescript
+
+La commande suivante va nous permettre de créer une application react native (Il est préférable d'installer via npx et non en global)
+
+```zsh
+npx react-native <command>
+```
+
+Pour créer un projet sur la base de la commande précédente
 
 ```zsh
 npx react-native init <MY_APP_NAME> --template react-native-template-typescript
@@ -74,3 +76,8 @@ npx react-native init <MY_APP_NAME> --template react-native-template-typescript
 react-native run-android
 react-native run-ios
 ```
+
+NOTE : Il se peut qu'il faille mettre à jour le fichier pod
+```zsh
+npx pod-install
+
