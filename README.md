@@ -71,6 +71,12 @@ Pour créer un projet sur la base de la commande précédente
 npx react-native init <MY_APP_NAME> --template react-native-template-typescript
 ```
 
+Initialiser Git dans le répertoire de l'application
+
+```zsh
+git init
+```
+
 ## Lancer le programme
 ```zsh
 react-native run-android
@@ -79,7 +85,7 @@ react-native run-ios
 
 NOTE : Il se peut qu'il faille mettre à jour le fichier pod
 
-Commenter le code dans le fichier ***podfile***.
+Commenter le code dans le fichier ***podfile***. Pour inhiber le debugger Flipper
 
 ```java
 # Note that if you have use_frameworks! enabled, Flipper will not work and
