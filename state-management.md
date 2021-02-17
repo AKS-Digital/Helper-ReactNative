@@ -77,10 +77,6 @@ export const StoreDisptachContext = React.createContext<
 export const StoreProvider = React.memo(({ children }: Props) => {
   const [store, dispatch] = React.useReducer(storeReducer, initialState);
 
-  React.useEffect(() => {
-    console.log(store);
-  }, [store]);
-
   return (
     <StoreDisptachContext.Provider value={dispatch}>
       <StoreStateContext.Provider value={store}>
@@ -89,5 +85,16 @@ export const StoreProvider = React.memo(({ children }: Props) => {
     </StoreDisptachContext.Provider>
   );
 });
+```
 
+Utilisation du storeProvider dans le fichier ***App.tsx***
 
+```ts
+//...
+import { StoreProvider } from './store';
+//...
+
+<StoreProvider>
+  //... Application
+</StoreProvider>
+```
