@@ -70,7 +70,7 @@ interface Props {
 }
 
 export const StoreStateContext = React.createContext(initialState);
-export const StoreDisptachContext = React.createContext<
+export const StoreDispatchContext = React.createContext<
   React.Dispatch<IStoreDispatch>
 >(() => null);
 
@@ -78,11 +78,11 @@ export const StoreProvider = React.memo(({ children }: Props) => {
   const [store, dispatch] = React.useReducer(storeReducer, initialState);
 
   return (
-    <StoreDisptachContext.Provider value={dispatch}>
+    <StoreDispatchContext.Provider value={dispatch}>
       <StoreStateContext.Provider value={store}>
         {children}
       </StoreStateContext.Provider>
-    </StoreDisptachContext.Provider>
+    </StoreDispatchContext.Provider>
   );
 });
 ```
