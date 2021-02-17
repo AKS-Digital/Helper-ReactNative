@@ -60,7 +60,7 @@ export const storeReducer = (
 
 Créer le fichier ***src/store/StoreProvider.tsx*** et copier :
 
-```ts
+```tsx
 import React from 'react';
 import { storeReducer } from './storeReducer';
 import { initialState, IStoreDispatch } from './initialState';
@@ -89,7 +89,7 @@ export const StoreProvider = React.memo(({ children }: Props) => {
 
 Utilisation du storeProvider dans le fichier ***App.tsx***
 
-```ts
+```tsx
 //...
 import { StoreProvider } from './store';
 //...
