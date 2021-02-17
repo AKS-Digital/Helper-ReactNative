@@ -98,3 +98,21 @@ import { StoreProvider } from './store';
   //... Application
 </StoreProvider>
 ```
+
+Créer le custom hooks useStore dans ***src/hooks/useStore.ts***
+
+```ts
+import React from 'react';
+import { StoreStateContext, StoreDispatchContext } from '../store';
+
+export const useStore = () => {
+  const store = React.useContext(StoreStateContext);
+  const dispatch = React.useContext(StoreDispatchContext);
+
+  const loadStorage = (isStateLoaded: boolean) => {
+    dispatch({ type: 'LOAD_STORAGE_STATE', payload: isStateLoaded });
+  };
+
+  return { store, loadStorage };
+};
+```
