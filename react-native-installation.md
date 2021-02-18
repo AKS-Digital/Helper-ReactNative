@@ -136,6 +136,12 @@ Faites vos modifications, puis entrez la commande suivante pour que vos modifica
 source ~/.zshrc
 ``` 
 
+Pour finir, entrer la commande suivante afin d'utiliser le debugger avec Android
+
+```zsh
+adb forward tcp:8080 tcp:8080
+```
+
 ### Alternative
 
 Les commandes suivantes vont nous permettre d'installer Expo (facultatif - uniquement pour les projets Expo)
