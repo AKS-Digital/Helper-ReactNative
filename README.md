@@ -5,3 +5,4 @@
 - [State Management](state-management.md)
 - [Navigation](navigation.md)
 - [Internationalization](internationalization.md)
+- [Requête API](api.md)
