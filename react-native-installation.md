@@ -97,10 +97,44 @@ Choisissez le Smartphone Pixel 3 XL.
 Choisissez la version Pie 28 - x86 - Android 9.0 (Google APIs).
 
 
+### Vérifications
 
+Nous allons maintenant vérifier que tout fonctionne.
 
+Le fichier .zshrc
 
+Entrez la commande suivante pour lire le contenu du fichier .zshrc :
 
+```zsh
+cat ~/.zshrc
+```
+
+Vous devriez obtenir exactement ceci :
+
+```zsh
+export PATH=~/.npm-global/bin:$PATH
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+
+Si vous n'obtenez pas le résultat attendu, vous devez modifier le fichier ***.zshrc*** manuellement avec Visual Studio Code.
+
+Pour pouvoir ouvrir un fichier depuis le Terminal, ouvrez Visual Studio Code puis allez dans le menu ***View, Command Palette*** puis recherchez ***Shell command: Install 'code' command in PATH.***
+
+Puis ouvrez le fichier ***.zshrc*** avec Visual Studio Code depuis le Terminal à l'aide de la commande suivante :
+
+```zsh
+code ~/.zshrc
+```
+
+Faites vos modifications, puis entrez la commande suivante pour que vos modifications soient prises en compte dans votre Terminal :
+
+```zsh
+source ~/.zshrc
+``` 
 
 ### Alternative
 
