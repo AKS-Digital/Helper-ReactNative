@@ -1,6 +1,7 @@
 # React Native - Update : 16 Févier 2021
 
-- [Installation et création d'un projet](react-native-installation.md)
+- [Installation des logiciels et vérification](react-native-installation.md)
+- [Création d'un projet React Native avec Typscript](creation-rpojet-react-native.md)
 - [State Management](state-management.md)
 - [Navigation](navigation.md)
 - [internationalization](internationalization.md)
