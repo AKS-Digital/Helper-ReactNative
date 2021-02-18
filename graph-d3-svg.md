@@ -19,8 +19,8 @@ npx pod-install
 android/settings.gradle
 
 ```java
-include ':react-native-svg'
-project(':react-native-svg').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-svg/android')
++ include ':react-native-svg'
++ project(':react-native-svg').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-svg/android')
 ```
 
 android/app/build.gradle
@@ -30,6 +30,6 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
-    implementation project(':react-native-svg')
++    implementation project(':react-native-svg')
 }
 ```
