@@ -74,6 +74,20 @@ dependencies {
 }
 ```
 
+### Utilisation dans le code
+
+Créer le fichier .env à la racine et copier :
+
+```
+API_URL=http://localhost:10000
+```
+
+```ts
+import Config from 'react-native-config';
+
+console.log(Config.API_URL);
+```
+
 ## Lancer le programme
 ```zsh
 react-native run-android
