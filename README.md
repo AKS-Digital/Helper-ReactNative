@@ -4,4 +4,4 @@
 - [Création d'un projet React Native avec Typescript](creation-project-react-native.md)
 - [State Management](state-management.md)
 - [Navigation](navigation.md)
-- [internationalization](internationalization.md)
+- [Internationalization](internationalization.md)
