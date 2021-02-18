@@ -89,9 +89,14 @@ source ~/.zshrc
 ```
 
 Accédez au menu principal de Android Studio et cliquez sur AVD Manager.
-Cliquez sur Create Virtual Device
-Choisissez le Smartphone Pixel 3 XL
-Choisissez la version Pie 28 - x86 - Android 9.0 (Google APIs) .
+
+Cliquez sur Create Virtual Device.
+
+Choisissez le Smartphone Pixel 3 XL.
+
+Choisissez la version Pie 28 - x86 - Android 9.0 (Google APIs).
+
+
 
 
 
