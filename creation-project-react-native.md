@@ -20,12 +20,6 @@ Initialiser Git dans le répertoire de l'application
 git init
 ```
 
-## Lancer le programme
-```zsh
-react-native run-android
-react-native run-ios
-```
-
 NOTE : Il se peut qu'il faille mettre à jour le fichier pod
 
 Commenter le code dans le fichier ***podfile***. Pour inhiber le debugger Flipper
@@ -41,4 +35,49 @@ Commenter le code dans le fichier ***podfile***. Pour inhiber le debugger Flippe
 
 ```zsh
 npx pod-install
+```
+## Variables d'environnement
+
+Les variables d'environnement servent à cacher les clés de l'application (api, secrets, ...) voir tous les éléments sensibles dans un fichier env.
+
+```zsh
+npm install react-native-config
+```
+
+### iOS
+
+Nous utilisons cocoapods, executer le code suivante pour installer le package
+
+```zsh
+npx pod-install
+```
+
+### Android
+
+android/settings.gradle
+
+```java
++ include ':react-native-config'
++ project(':react-native-config').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-config/android')
+android/app/build.gradle
+```
+
+android/app/build.gradle
+
+```java
+// 2nd line, add a new apply:
++ apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
+dependencies {
+	implementation "com.facebook.react:react-native:+"  // From node_modules
++	implementation project(':react-native-config')
+}
+```
+
+## Lancer le programme
+```zsh
+react-native run-android
+react-native run-ios
+```
+
 
