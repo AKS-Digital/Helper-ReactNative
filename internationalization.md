@@ -57,7 +57,25 @@ export const useTranslation = () => {
 };
 ```
 
-## Utilisation 
+## Utilisation
+
+Fournir le provider à l'application dans le fichier ***src/App.tsx***
+
+```tsx
+import { LocaleProvider } from './providers';
+
+export default function App() {
+  return (
+    <LocaleProvider>
+      <StoreProvider>
+        <Navigator />
+      </StoreProvider>
+    </LocaleProvider>
+  );
+}
+```
+
+Dans un composant en l'utilisant en tant que hooks
 
 ```tsx
 import { useTranslation } from '../hooks';
