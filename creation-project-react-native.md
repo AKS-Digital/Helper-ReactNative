@@ -54,6 +54,8 @@ npx pod-install
 
 ### Android
 
+Pour Android, ajouter manuellement les éléments suivants
+
 android/settings.gradle
 
 ```java
