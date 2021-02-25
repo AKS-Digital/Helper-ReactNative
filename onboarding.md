@@ -5,7 +5,7 @@ Pour créer notre page d'onboarding, nous allons utiliser le composant React Nat
 Le composant onboarding aura pour structure:
 - le composant à afficher
 - la pagination
-- le bouton suivant ou suivant
+- le bouton suivant ou ignorer
 
 ## pré-requis
 
