@@ -23,7 +23,11 @@ Copier tous les fichiers dans le dossier ***src/assets/fonts/***
 Pour react native > 0.60. Ajouter le code suivant dans le fichier ***react-native.config.js*** à la racine du projet
 
 ```js
-assets: ['./src/assets/fonts/']
+module.exports = {
+    "assets": [
+        "fonts"
+    ],
+}
 ```
 
 puis taper la ligne de commande suivante 
