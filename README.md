@@ -9,7 +9,7 @@
   - [Theme]()
   - [Logo d'application]()
   - [Fichiers SVG]()
-  - [Fonts]()
+  - [Fonts](custom-fonts.md)
   - [Internationalization](internationalization.md)
   - [Requête API](api.md)
   - [Graphique avec d3 et svg](graph-d3-svg.md)
