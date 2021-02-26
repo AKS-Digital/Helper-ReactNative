@@ -42,10 +42,10 @@ Pour Android: copier la font dans le dossier ***android/app/src/main/assets/font
 ```ts
 const theme = {
  title : {
-   fontFamily: "Sarpanch-Bold"
+   fontFamily: "WorkSans-Bold"
  },
  body : {
-   fontFamily: "Sarpanch-Regular"
+   fontFamily: "WorkSans-Regular"
  }
 }
 ```
@@ -59,5 +59,5 @@ Vous pouvez remarquer que le choix de ne pas utiliser la propriété fontWeight 
 
 // or
 
-<Text style={fontFamily:Sarpanch-SemiBold}>My awesome font</Text>;
+<Text style={fontFamily:WorkSans-SemiBold}>My awesome font</Text>;
 ```
