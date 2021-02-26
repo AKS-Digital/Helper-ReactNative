@@ -10,7 +10,7 @@ Un dossier sera généré.
 
 Copier le contenu du dossier ***android*** dans le répertoire ***Android/app/src/main/res***
 
-:fire: Attention : Supprimer tous les dossiers sauf le dossier values. Lors de la copier fusionner les fichiers
+:fire: Attention : Supprimer tous les dossiers sauf le dossier values. Lors de la copie, fusionner les fichiers
 
 ## iOS
 
