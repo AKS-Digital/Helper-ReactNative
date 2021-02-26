@@ -1,6 +1,6 @@
 # Intégration de logo à l'application
 
-Nous allons intégrer des logos à l'application. Pour cela, créé votre logo en format PNG 1024x1024 et se rendre sur le site [https://easyappicon.com/](https://easyappicon.com/)
+Nous allons intégrer des logos à l'application. Pour cela, créé votre ***logo en format PNG 1024x1024*** et se rendre sur le site [https://easyappicon.com/](https://easyappicon.com/)
 
 Charger votre logo et régler le padding si nécessaire. Une fois fini, appuyer sur download et choisir ***iOS + Adaptative icon***
 
