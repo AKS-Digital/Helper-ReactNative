@@ -2,6 +2,7 @@
 
 - [Installation des logiciels et vérification](react-native-installation.md)
 - [Création d'un projet React Native avec Typescript](creation-project-react-native.md)
+- [Logo de l'application](react-native-app-logo.md)
 - Structure
   - [Navigation](navigation.md)
   - [State Management](state-management.md)
@@ -12,6 +13,9 @@
   - [Internationalization](internationalization.md)
   - [Requête API](api.md)
   - [Graphique avec d3 et svg](graph-d3-svg.md)
-- Features (écrans)
+- Features
   - [OnBoarding](onboarding.md)
   - [Inscription]()
+- Publication
+  - Google Play
+  - Apple Store 
