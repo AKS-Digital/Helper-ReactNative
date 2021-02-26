@@ -2,7 +2,7 @@
 
 - [Installation des logiciels et vérification](react-native-installation.md)
 - [Création d'un projet React Native avec Typescript](creation-project-react-native.md)
-- [Logo de l'application](react-native-app-logo.md)
+- [Icon de l'application](react-native-app-logo.md)
 - Structure
   - [Navigation](navigation.md)
   - [State Management](state-management.md)
