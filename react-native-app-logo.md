@@ -1,12 +1,16 @@
 # Intégration de logo à l'application
 
-Nous allons intégrer des logos à l'application. Pour cela, récupérer votre logo en format png parfaitement carré en terme de pixel et se rendre sur le site [https://makeappicon.com/](https://makeappicon.com/)
+Nous allons intégrer des logos à l'application. Pour cela, créé votre logo en format PNG 1024x1024 et se rendre sur le site [https://easyappicon.com/](https://easyappicon.com/)
+
+Charger votre logo et régler le padding si nécessaire. Une fois fini, appuyer sur download et choisir ***iOS + Adaptative icon***
 
 Un dossier sera généré.
 
 ## Android
 
-Copier le contenu du dossier ***android*** dans le répertoire ***Android/app/src/mùain/res***
+Copier le contenu du dossier ***android*** dans le répertoire ***Android/app/src/main/res***
+
+:fire: Attention : Supprimer tous les dossiers sauf le dossier values. Lors de la copier fusionner les fichiers
 
 ## iOS
 
