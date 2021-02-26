@@ -61,7 +61,6 @@ android/settings.gradle
 ```java
 + include ':react-native-config'
 + project(':react-native-config').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-config/android')
-android/app/build.gradle
 ```
 
 android/app/build.gradle
