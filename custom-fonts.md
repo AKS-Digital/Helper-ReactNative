@@ -23,7 +23,7 @@ Copier tous les fichiers dans le dossier ***src/assets/fonts/***
 Pour react native > 0.60. Ajouter le code suivant dans le fichier ***react-native.config.js*** à la racine du projet
 
 ```js
-assets: ['./assets/fonts/']
+assets: ['./src/assets/fonts/']
 ```
 
 puis taper la ligne de commande suivante 
@@ -36,3 +36,28 @@ Cette commande aura pour impact :
 
 Pour iOS: lier notre font au projet Xcode
 Pour Android: copier la font dans le dossier ***android/app/src/main/assets/fonts***
+
+## Création d'un thème
+
+```ts
+const theme = {
+ title : {
+   fontFamily: "Sarpanch-Bold"
+ },
+ body : {
+   fontFamily: "Sarpanch-Regular"
+ }
+}
+```
+
+## Utilisation
+
+Vous pouvez remarquer que le choix de ne pas utiliser la propriété fontWeight dans notre style. En effet, il existe d'autres solutions où vous pouvez l'utiliser mais cela ne fonctionne que sur iOS. Pour Android, vous devrez rédiger un service qui effectuera la traduction entre le fontWeight et le nom complet de votre police (ex: Sarpanch-ExtraBold pour fontWeight: 800).
+
+```tsx
+<Text style={theme.title}>My awesome font</Text>;
+
+// or
+
+<Text style={fontFamily:Sarpanch-SemiBold}>My awesome font</Text>;
+```
