@@ -13,6 +13,8 @@ npx react-native link react-native-vector-icons
 npx pod-install
 ```
 
+:fire: Attention: Si une erreur multiple command apparait. Aller dans Xcode ***build Phases*** et supprimer toutes les dépendances .ttf de ***Copy bundle Ressources***
+
 ## Android
 
 Ajouter dans le fichier ***android/app/build.gradle*** les lignes suivantes
