@@ -7,7 +7,7 @@
   - [Navigation](navigation.md)
   - [State Management](state-management.md)
   - [Theme]()
-  - [Logo d'application]()
+  - [vector icons](vector-icons.md)
   - [Fichiers SVG]()
   - [Fonts](custom-fonts.md)
   - [Internationalization](internationalization.md)
