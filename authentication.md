@@ -122,7 +122,7 @@ export const ApiProvider = ({ children }: Props) => {
 
   // Silently refresh tokens
   React.useEffect(() => {
-    if (state.isRestored) {
+    if (state.isRestored && state.refreshToken) {
       axios
         .post('http://localhost:3000/auth/refresh-token', {
           refreshToken: state.refreshToken,
@@ -159,4 +159,138 @@ export const ApiProvider = ({ children }: Props) => {
 Créer un fichier ***src/auth/useApi.tsx*** et copier
 
 ```tsx
+import React from 'react';
+import { ApiStateContext, ApiDispatchContext } from './ApiProvider';
+import axios from 'axios';
+
+export const useApi = () => {
+  const [isLoading, setIsLoading] = React.useState(false);
+  const apiState = React.useContext(ApiStateContext);
+  const dispatch = React.useContext(ApiDispatchContext);
+
+  const api = axios.create({
+    baseURL: 'http://localhost:3000/',
+    timeout: 1000,
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${apiState.accessToken}`,
+    },
+  });
+
+  const get = async (endpoint: string, query?: object) => {
+    setIsLoading(true);
+    try {
+      const { data } = await api.get(endpoint, { params: query });
+      return data;
+    } catch (err) {
+      try {
+        const tokens = await refreshCredentials();
+        if (tokens) {
+          const response = await api.get(endpoint, {
+            headers: {
+              Authorization: `Bearer ${tokens.data.accessToken}`,
+            },
+            params: query,
+          });
+          dispatch({
+            type: 'LOGIN',
+            payload: { ...tokens.data },
+          });
+          return response.data;
+        }
+        return null;
+      } catch (err) {
+        return null;
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  const post = async (endpoint: string, body?: object) => {
+    setIsLoading(true);
+    try {
+      const { data } = await api.post(endpoint, body);
+      return data;
+    } catch (err) {
+      try {
+        const tokens = await refreshCredentials();
+        if (tokens) {
+          const response = await api.post(endpoint, body, {
+            headers: {
+              Authorization: `Bearer ${tokens.data.accessToken}`,
+            },
+          });
+          dispatch({
+            type: 'LOGIN',
+            payload: { ...tokens.data },
+          });
+          return response.data;
+        }
+        return null;
+      } catch (err) {
+        return null;
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  const login = async (email: string, password: string) => {
+    try {
+      setIsLoading(true);
+      const response: any = await api.post('/auth/login', { email, password });
+      if (response) {
+        dispatch({
+          type: 'LOGIN',
+          payload: { ...response.data },
+        });
+      }
+    } catch (err) {
+      console.log(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  const logout = async () => {
+    try {
+      setIsLoading(true);
+      await api.delete('/auth/logout', {
+        data: {
+          refreshToken: apiState.refreshToken,
+        },
+      });
+    } catch (err) {
+      console.log(err.message);
+    } finally {
+      dispatch({
+        type: 'LOGOUT',
+        payload: null,
+      });
+      setIsLoading(false);
+    }
+  };
+  const refreshCredentials = async () => {
+    try {
+      setIsLoading(true);
+      const response = await api.post('/auth/refresh-token', {
+        refreshToken: apiState.refreshToken,
+      });
+      if (response) {
+        dispatch({
+          type: 'LOGIN',
+          payload: { ...response.data },
+        });
+      }
+      return response;
+    } catch (err) {
+      dispatch({
+        type: 'LOGOUT',
+        payload: null,
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return { isLoading, apiState, login, logout, get, post };
+};
 ```
