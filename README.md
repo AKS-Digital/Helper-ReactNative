@@ -4,6 +4,7 @@
 - [Création d'un projet React Native avec Typescript](creation-project-react-native.md)
 - [Icon de l'application](react-native-app-logo.md)
 - Structure
+  - [Authentification](authentication.md)
   - [Navigation](navigation.md)
   - [State Management](state-management.md)
   - [Theme]()
