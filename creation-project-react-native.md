@@ -89,6 +89,65 @@ import Config from 'react-native-config';
 console.log(Config.API_URL);
 ```
 
+## Autorisation du traffic internet
+
+### Android
+
+Nous avons besoin de définir le serveur en localhost. pour cela dans le fichier ***AndroidManifest.xml*** ajouter ces lignes:
+
+```xml
+<manifest ...>
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application
+    android:name=".MainApplication"
++   android:usesCleartextTraffic="true"
++   android:networkSecurityConfig="@xml/network_security_config"
+  ...>
+    <activity android:name=".MainActivity" ...>
+      ...
+    </activity>
+  </application>
+</manifest>
+```
+
+Nous souhaitons uniquement autoriser quelques adresses. Créer le fichier ***network_security_config.xml*** dans le répertoire ***app/src/main/res/xml*** et copier
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+  <domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="false">localhost</domain>
+    <domain includeSubdomains="false">10.0.2.2</domain>
+    <base-config cleartextTrafficPermitted="true"/>
+  </domain-config>
+</network-security-config>
+```
+
+Pour ajouter une adresse ip en particulier:
+
+```xml
+    <domain includeSubdomains="false"><CUSTOM_IP></domain>
+```
+
+### iOS
+
+Pas besoin d'ajouter d'exception dans React mais vous pouvez contrôler dans le fichier ***info.plist*** si l'élement suivant est défini:
+
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+<key>NSExceptionDomains</key>
+  <dict>
+  <key>localhost</key>
+  <dict>
+    <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+    <true/>
+  </dict>
+  </dict>
+</dict>
+```
+
+
 ## Lancer le programme
 ```zsh
 react-native run-android
