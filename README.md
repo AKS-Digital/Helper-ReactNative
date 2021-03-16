@@ -15,6 +15,7 @@
   - [Requête API](api.md)
   - [Graphique avec d3 et svg](graph-d3-svg.md)
 - Features
+  - [Background location](background-location.md)
   - [OnBoarding](onboarding.md)
   - [Inscription]()
 - Publication
