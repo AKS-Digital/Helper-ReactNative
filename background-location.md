@@ -98,8 +98,8 @@ Créer un fichier ***android/app/src/main/res/values/colors.xml*** et copier :
 
 ```xml
 <resources>
-  <item  name="blue"  type="color">#00C4D1</item>
-  <integer-array  name="androidcolors">
+  <item name="blue" type="color">#00C4D1</item>
+  <integer-array name="androidcolors">
     <item>@color/blue</item>
   </integer-array>
 </resources>
