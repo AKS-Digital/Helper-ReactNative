@@ -13,7 +13,7 @@ Le ***Foreground service*** est une sorte de notification sur Android qui permet
 Ajouter dans le fichier ***Android/app/src/main/AndroidManifest.xml***
 
 ```java
-<!-- Add the next two lines -->
+<manifest ...>
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
   <uses-permission android:name="android.permission.WAKE_LOCK" />
   <application ...>
@@ -33,6 +33,7 @@ Ajouter dans le fichier ***Android/app/src/main/AndroidManifest.xml***
     <service android:name="com.supersami.foregroundservice.ForegroundService"></service>
     <service android:name="com.supersami.foregroundservice.ForegroundServiceTask"></service>
   </application>
+</manifest>
 ```
 
 ## Installation des dépendances
