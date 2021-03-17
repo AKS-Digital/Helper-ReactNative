@@ -94,6 +94,18 @@ public class MainActivity extends ReactActivity {
 }
 ```
 
+Créer un fichier ***android/app/src/main/res/values/colors.xml*** et copier :
+
+```xml
+<resources>
+    <item  name="blue"  type="color">#00C4D1
+    </item>
+    <integer-array  name="androidcolors">
+    <item>@color/blue</item>
+    </integer-array>
+</resources>
+```
+Il s'agit de la définition des couleurs dans le Manifest
 
 ## Installation des dépendances
 
